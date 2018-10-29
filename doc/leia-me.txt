@@ -1,0 +1,3 @@
+Link da coleção do Postman: https://www.getpostman.com/collections/93cc8758db492b066a6d
+Arquivo swagger.json pode ser importado em: http://editor.swagger.io
+Na pasta html-client está a documentação completa da API

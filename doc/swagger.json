@@ -1,0 +1,441 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Essa é uma documentação simple do desafio proposto pela Phoebus para o carga de Engenheiro de Software Jr.",
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+    {
+      "name": "rebelde",
+      "description": "Rebelde"
+    },
+    {
+      "name": "localizacao",
+      "description": "Localização"
+    },
+    {
+      "name": "reportar",
+      "description": "Reportar"
+    },
+    {
+      "name": "negociar",
+      "description": "Negociar"
+    },
+    {
+      "name": "relatorio",
+      "description": "Relatório"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/rebelde": {
+      "post": {
+        "tags": [
+          "rebelde"
+        ],
+        "summary": "Adicionar Rebelde",
+        "description": "",
+        "operationId": "addRebelde",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Criar Rebelde",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rebelde"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "rebelde"
+        ],
+        "summary": "Listar todos os Rebeldes",
+        "operationId": "listarRebeldes",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de Rebeldes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Rebelde"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/rebelde/{rebeldeId}": {
+      "get": {
+        "tags": [
+          "rebelde"
+        ],
+        "summary": "Obter Rebelde por Id",
+        "operationId": "getRebelde",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "rebeldeId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "description": "Código do rebelde"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Rebelde"
+            }
+          },
+          "404": {
+            "description": "Rebelde não encontrado"
+          }
+        }
+      }
+    },
+    "/rebelde/{rebeldeId}/localizacao": {
+      "put": {
+        "tags": [
+          "localizacao"
+        ],
+        "summary": "Obter Rebelde por Id",
+        "operationId": "updateLocalizacao",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "rebeldeId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "description": "Código do rebelde"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Rebelde não encontrado"
+          }
+        }
+      }
+    },
+    "/rebelde/{rebeldeId}/reportar": {
+      "post": {
+        "tags": [
+          "reportar"
+        ],
+        "summary": "Reportar um rebelde como traidor",
+        "operationId": "reportarRebelde",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "rebeldeId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "description": "Código do rebelde"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Rebelde não encontrado"
+          }
+        }
+      }
+    },
+    "/rebelde/negociar": {
+      "post": {
+        "tags": [
+          "negociar"
+        ],
+        "summary": "Negociar",
+        "operationId": "negociar",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "rebeldeId1",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "description": "Código do rebelde 1"
+          },
+          {
+            "name": "rebeldeId2",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "description": "Código do rebelde 2"
+          },
+          {
+            "name": "negociarItens",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NegociarItensContext"
+            },
+            "description": "Itens a ser negociados"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Rebelde não encontrado"
+          }
+        }
+      }
+    },
+    "/rebelde/relatorio": {
+      "get": {
+        "tags": [
+          "relatorio"
+        ],
+        "summary": "Relatorio",
+        "description": "Relatório completo",
+        "operationId": "relatorio",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Relatório com todos os dados",
+            "schema": {
+              "$ref": "#/definitions/Relatorio"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Rebelde": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "idade": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "genero": {
+          "type": "string",
+          "description": "Order Status",
+          "enum": [
+            "M",
+            "F"
+          ]
+        },
+        "localizacao": {
+          "$ref": "#/definitions/Localizacao"
+        },
+        "inventario": {
+          "$ref": "#/definitions/Inventario"
+        }
+      },
+      "xml": {
+        "name": "Rebelde"
+      }
+    },
+    "Localizacao": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "nomeGalaxia": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Category"
+      }
+    },
+    "Inventario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPontos": {
+          "type": "integer"
+        },
+        "itens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          }
+        }
+      },
+      "xml": {
+        "name": "Inventario"
+      }
+    },
+    "Item": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "enum": [
+            "ARMA",
+            "MUNICAO",
+            "AGUA",
+            "COMIDA"
+          ]
+        },
+        "quantidade": {
+          "type": "number",
+          "format": "integer"
+        }
+      },
+      "xml": {
+        "name": "Tag"
+      }
+    },
+    "NegociarItensContext": {
+      "type": "object",
+      "properties": {
+        "itensRebelde1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          }
+        },
+        "itensRebelde2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          }
+        }
+      }
+    },
+    "Relatorio": {
+      "type": "object",
+      "properties": {
+        "porcentagemTraidores": {
+          "type": "number",
+          "format": "double"
+        },
+        "porcentagemRebeldes": {
+          "type": "number",
+          "format": "double"
+        },
+        "qtdMediaArma": {
+          "type": "number",
+          "format": "double"
+        },
+        "qtdMediaMunicao": {
+          "type": "number",
+          "format": "double"
+        },
+        "qtdMediaAgua": {
+          "type": "number",
+          "format": "double"
+        },
+        "qtdMediaComida": {
+          "type": "number",
+          "format": "double"
+        },
+        "pontosPerdidos": {
+          "type": "number",
+          "format": "integer"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

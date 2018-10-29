@@ -1,0 +1,708 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Swagger Petstore</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Swagger Petstore</h1>
+    <div class="app-desc">Essa é uma documentação simples do desafio proposto pela Phoebus para o carga de Engenheiro de Software Jr.</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="apiteam@swagger.io">apiteam@swagger.io</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/v2</div>
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Localizacao">Localizacao</a></h4>
+  <ul>
+  <li><a href="#updateLocalizacao"><code><span class="http-method">put</span> /rebelde/{rebeldeId}/localizacao</code></a></li>
+  </ul>
+  <h4><a href="#Negociar">Negociar</a></h4>
+  <ul>
+  <li><a href="#negociar"><code><span class="http-method">post</span> /rebelde/negociar</code></a></li>
+  </ul>
+  <h4><a href="#Rebelde">Rebelde</a></h4>
+  <ul>
+  <li><a href="#addRebelde"><code><span class="http-method">post</span> /rebelde</code></a></li>
+  <li><a href="#getRebelde"><code><span class="http-method">get</span> /rebelde/{rebeldeId}</code></a></li>
+  <li><a href="#listarRebeldes"><code><span class="http-method">get</span> /rebelde</code></a></li>
+  </ul>
+  <h4><a href="#Relatorio">Relatorio</a></h4>
+  <ul>
+  <li><a href="#relatorio"><code><span class="http-method">get</span> /rebelde/relatorio</code></a></li>
+  </ul>
+  <h4><a href="#Reportar">Reportar</a></h4>
+  <ul>
+  <li><a href="#reportarRebelde"><code><span class="http-method">post</span> /rebelde/{rebeldeId}/reportar</code></a></li>
+  </ul>
+
+  <h1><a name="Localizacao">Localizacao</a></h1>
+  <div class="method"><a name="updateLocalizacao"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /rebelde/{rebeldeId}/localizacao</code></pre></div>
+    <div class="method-summary">Atualizar Localização do Rebelde (<span class="nickname">updateLocalizacao</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">rebeldeId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Código do rebelde format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Rebelde não encontrado
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Negociar">Negociar</a></h1>
+  <div class="method"><a name="negociar"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /rebelde/negociar</code></pre></div>
+    <div class="method-summary">Negociar (<span class="nickname">negociar</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">negociarItens <a href="#NegociarItensContext">NegociarItensContext</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Itens a ser negociados </div>
+
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">rebeldeId1 (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Código do rebelde 1 format: int64</div><div class="param">rebeldeId2 (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Código do rebelde 2 format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Rebelde não encontrado
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Rebelde">Rebelde</a></h1>
+  <div class="method"><a name="addRebelde"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /rebelde</code></pre></div>
+    <div class="method-summary">Adicionar Rebelde (<span class="nickname">addRebelde</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#Rebelde">Rebelde</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Criar Rebelde </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#"></a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getRebelde"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /rebelde/{rebeldeId}</code></pre></div>
+    <div class="method-summary">Obter Rebelde por Id (<span class="nickname">getRebelde</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">rebeldeId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Código do rebelde format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Rebelde">Rebelde</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "idade" : 6,
+  "localizacao" : {
+    "latitude" : 5.637377,
+    "id" : 1,
+    "longitude" : 5.962134,
+    "nomeGalaxia" : "nomeGalaxia"
+  },
+  "genero" : "M",
+  "nome" : "nome",
+  "id" : 0,
+  "inventario" : {
+    "itens" : [ {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    }, {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    } ],
+    "id" : 2,
+    "totalPontos" : 7
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Rebelde">Rebelde</a>
+    <h4 class="field-label">404</h4>
+    Rebelde não encontrado
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listarRebeldes"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /rebelde</code></pre></div>
+    <div class="method-summary">Listar todos os Rebeldes (<span class="nickname">listarRebeldes</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Rebelde">Rebelde</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "idade" : 6,
+  "localizacao" : {
+    "latitude" : 5.637377,
+    "id" : 1,
+    "longitude" : 5.962134,
+    "nomeGalaxia" : "nomeGalaxia"
+  },
+  "genero" : "M",
+  "nome" : "nome",
+  "id" : 0,
+  "inventario" : {
+    "itens" : [ {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    }, {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    } ],
+    "id" : 2,
+    "totalPontos" : 7
+  }
+}, {
+  "idade" : 6,
+  "localizacao" : {
+    "latitude" : 5.637377,
+    "id" : 1,
+    "longitude" : 5.962134,
+    "nomeGalaxia" : "nomeGalaxia"
+  },
+  "genero" : "M",
+  "nome" : "nome",
+  "id" : 0,
+  "inventario" : {
+    "itens" : [ {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    }, {
+      "nome" : "ARMA",
+      "quantidade" : 9.301444243932575517419536481611430644989013671875
+    } ],
+    "id" : 2,
+    "totalPontos" : 7
+  }
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Lista de Rebeldes
+        
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#"></a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Relatorio">Relatorio</a></h1>
+  <div class="method"><a name="relatorio"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /rebelde/relatorio</code></pre></div>
+    <div class="method-summary">Relatorio (<span class="nickname">relatorio</span>)</div>
+    <div class="method-notes">Relatório completo</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Relatorio">Relatorio</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "qtdMediaArma" : 1.4658129805029452,
+  "qtdMediaMunicao" : 5.962133916683182,
+  "porcentagemTraidores" : 0.8008281904610115,
+  "porcentagemRebeldes" : 6.027456183070403,
+  "qtdMediaAgua" : 5.637376656633329,
+  "qtdMediaComida" : 2.3021358869347655,
+  "pontosPerdidos" : 7.061401241503109105224211816675961017608642578125
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Relatório com todos os dados
+        <a href="#Relatorio">Relatorio</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Reportar">Reportar</a></h1>
+  <div class="method"><a name="reportarRebelde"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /rebelde/{rebeldeId}/reportar</code></pre></div>
+    <div class="method-summary">Reportar um rebelde como traidor (<span class="nickname">reportarRebelde</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">rebeldeId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Código do rebelde format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Rebelde não encontrado
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Inventario"><code>Inventario</code> - </a></li>
+    <li><a href="#Item"><code>Item</code> - </a></li>
+    <li><a href="#Localizacao"><code>Localizacao</code> - </a></li>
+    <li><a href="#NegociarItensContext"><code>NegociarItensContext</code> - </a></li>
+    <li><a href="#Rebelde"><code>Rebelde</code> - </a></li>
+    <li><a href="#Relatorio"><code>Relatorio</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Inventario"><code>Inventario</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">totalPontos (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">itens (optional)</div><div class="param-desc"><span class="param-type"><a href="#Item">array[Item]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Item"><code>Item</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">nome (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">ARMA</div><div class="param-enum">MUNICAO</div><div class="param-enum">AGUA</div><div class="param-enum">COMIDA</div>
+<div class="param">quantidade (optional)</div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  format: integer</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Localizacao"><code>Localizacao</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">longitude (optional)</div><div class="param-desc"><span class="param-type"><a href="#float">Float</a></span>  format: float</div>
+<div class="param">latitude (optional)</div><div class="param-desc"><span class="param-type"><a href="#float">Float</a></span>  format: float</div>
+<div class="param">nomeGalaxia (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="NegociarItensContext"><code>NegociarItensContext</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">itensRebelde1 (optional)</div><div class="param-desc"><span class="param-type"><a href="#Item">array[Item]</a></span>  </div>
+<div class="param">itensRebelde2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#Item">array[Item]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Rebelde"><code>Rebelde</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">nome (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">idade (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">genero (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Order Status </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">M</div><div class="param-enum">F</div>
+<div class="param">localizacao (optional)</div><div class="param-desc"><span class="param-type"><a href="#Localizacao">Localizacao</a></span>  </div>
+<div class="param">inventario (optional)</div><div class="param-desc"><span class="param-type"><a href="#Inventario">Inventario</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Relatorio"><code>Relatorio</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">porcentagemTraidores (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">porcentagemRebeldes (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">qtdMediaArma (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">qtdMediaMunicao (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">qtdMediaAgua (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">qtdMediaComida (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">pontosPerdidos (optional)</div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  format: integer</div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
